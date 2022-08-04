@@ -11,7 +11,7 @@ const storedTailwindOption = localStorage.getItem(PREFIX + 'tailwind');
 export const html = writable(storedHTML || '');
 export const js = writable(storedJS || '');
 export const css = writable(storedCSS || '');
-export const tailwind = writable(storedTailwindOption === 'true' ? true : false || false);
+export const tailwind = writable(storedTailwindOption === 'true' ? true : false || true);
 
 html.subscribe((value) => {
 	localStorage.setItem(PREFIX + 'html', value);
