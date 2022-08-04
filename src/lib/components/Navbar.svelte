@@ -14,8 +14,21 @@
 	function download() {
 		console.log('downloading');
 		var zip = new JSZip();
+		let fullHtml = `<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+		<link rel="stylesheet" href="styles.css">
+    ${$tailwind ? `<script src='https://cdn.tailwindcss.com'/><\/script>` : ''}
+  </head>
+  <body>
+		${$html}
+		<script src="main.js"><\/script>
+	</body>
+</html>`;
 
-		zip.file('index.html', $html);
+		zip.file('index.html', fullHtml);
 		zip.file('styles.css', $css);
 		zip.file('main.js', $js);
 
