@@ -1,10 +1,11 @@
 <script>
-	import { resizing, html, css, js, tailwind } from './lib/stores/store.js';
 	import { consoleContent } from './lib/stores/console.js';
+	import { resizing, html, css, js, tailwind } from './lib/stores/store.js';
+	import { onMount } from 'svelte';
 	import Sidebar from './lib/components/Sidebar.svelte';
 	import Navbar from './lib/components/Navbar.svelte';
 	import Footer from './lib/components/Footer.svelte';
-	import { onMount } from 'svelte';
+	import Console from './lib/components/Console.svelte';
 
 	let srcDoc;
 	let cooldownTimer;
@@ -17,8 +18,7 @@
 		window.addEventListener('message', (e) => {
 			const data = e.data;
 			if (data.type === 'log') {
-				$consoleContent.push(data.args[0]);
-				console.log($consoleContent);
+				$consoleContent = [...$consoleContent, data.args[0]];
 			}
 		});
 	});
@@ -153,8 +153,10 @@
 					height="100%"
 				/>
 			{/if}
+			<Console />
 		</div>
 	</section>
+
 	<Footer />
 </main>
 
