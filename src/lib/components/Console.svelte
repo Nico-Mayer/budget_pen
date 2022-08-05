@@ -6,7 +6,7 @@
 
 {#key $consoleOpen}
 	<main
-		class="bg-panelBgLight dark:bg-panelBgDark w-full h-40 absolute bottom-6 flex-col hidden"
+		class="bg-panelBgLight dark:bg-panelBgDark h-40 flex-col hidden w-full absolute bottom-0"
 		class:flex={$consoleOpen}
 		transition:slide
 	>
@@ -14,7 +14,7 @@
 			<div class="i-mdi-console-line mr-1 text-xl" />
 			<span>console:</span>
 		</div>
-		<section class="flex flex-col-reverse overflow-scroll">
+		<section class="flex flex-col-reverse overflow-y-scroll">
 			<div>
 				{#each $consoleContent as log, i}
 					<p

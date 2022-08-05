@@ -53,9 +53,10 @@
 	class="w-screen h-screen flex flex-col overflow-hidden min-w-[700px] text-fontLight dark:text-fontDark font-mono"
 >
 	<Navbar />
-	<section class="flex h-full overflow-hidden">
+	<section class="flex h-full">
 		<Sidebar />
-		<div class="flex flex-1 relativ">
+
+		<div class="flex flex-1 relative">
 			{#if $resizing}
 				<div class="bg-transparent w-full h-full absolute left-0 top-0" />
 			{/if}
