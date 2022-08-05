@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify-json/carbon': ^1.1.7
   '@iconify-json/charm': ^1.1.3
+  '@iconify-json/mdi': ^1.1.29
   '@iconify-json/simple-icons': ^1.1.20
   '@sveltejs/vite-plugin-svelte': ^1.0.1
   '@unocss/core': ^0.45.1
@@ -23,6 +24,7 @@ specifiers:
   vite: ^3.0.0
 
 dependencies:
+  '@iconify-json/mdi': 1.1.29
   codemirror: 5.65.7
   jszip: 3.10.1
   save-as: 0.1.8
@@ -79,6 +81,12 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
+  /@iconify-json/mdi/1.1.29:
+    resolution: {integrity: sha512-klGuStNuyOHJIaCK36XWiXuUnnxKaZfGXGh+RVf4hbB2Pyvp//PgNvluz8uK32remmQDydzPr+ipvqbenxzQ2g==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: false
+
   /@iconify-json/simple-icons/1.1.20:
     resolution: {integrity: sha512-IP5yZAoRU82fR5szwbBLnECWgY4JuZDgqEEXzioaOFygqZRP8Ku9ONgPK/qe2vwsUB6RWM5jTm0S4KHtMiTOEQ==}
     dependencies:
@@ -87,7 +95,6 @@ packages:
 
   /@iconify/types/1.1.0:
     resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
-    dev: true
 
   /@iconify/utils/1.0.33:
     resolution: {integrity: sha512-vGeAqo7aGPxOQmGdVoXFUOuyN+0V7Lcrx2EvaiRjxUD1x6Om0Tvq2bdm7E24l2Pz++4S0mWMCVFXe/17EtKImQ==}

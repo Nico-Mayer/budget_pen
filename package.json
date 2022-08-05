@@ -25,6 +25,7 @@
 		"vite": "^3.0.0"
 	},
 	"dependencies": {
+		"@iconify-json/mdi": "^1.1.29",
 		"codemirror": "5",
 		"jszip": "^3.10.1",
 		"save-as": "^0.1.8",

@@ -1,11 +1,17 @@
 <script>
 	import { consoleContent } from '../stores/console.js';
+	import { consoleOpen } from '../stores/console.js';
+	import { slide } from 'svelte/transition';
 </script>
 
-<main
-	class="bg-panelBgLight dark:bg-panelBgDark w-full h-20 border-red-400 border absolute bottom-6 flex flex-col overflow-scroll hidden"
->
-	{#each $consoleContent as log}
-		<p>{log}</p>
-	{/each}
-</main>
+{#key $consoleOpen}
+	<main
+		class="bg-panelBgLight dark:bg-panelBgDark w-full h-20 absolute bottom-6 flex-col overflow-scroll hidden"
+		class:flex={$consoleOpen}
+		transition:slide
+	>
+		{#each $consoleContent as log}
+			<p>{log}</p>
+		{/each}
+	</main>
+{/key}
