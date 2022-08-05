@@ -1,6 +1,6 @@
 <script>
 	import { resizing, html, css, js, tailwind } from './lib/stores/store.js';
-
+	import { consoleContent } from './lib/stores/console.js';
 	import Sidebar from './lib/components/Sidebar.svelte';
 	import Navbar from './lib/components/Navbar.svelte';
 	import Footer from './lib/components/Footer.svelte';
@@ -8,13 +8,19 @@
 
 	let srcDoc;
 	let cooldownTimer;
-
 	let firstLoad = true;
 
 	onMount(() => {
 		setTimeout(() => {
 			firstLoad = false;
 		}, 1400);
+		window.addEventListener('message', (e) => {
+			const data = e.data;
+			if (data.type === 'log') {
+				$consoleContent.push(data.args[0]);
+				console.log($consoleContent);
+			}
+		});
 	});
 
 	$: {
@@ -28,9 +34,16 @@
           <title>Document</title>
           ${$tailwind ? `<script src='https://cdn.tailwindcss.com'/><\/script>` : ''}
         </head>
+				<script>
+					const originalLog = console.log;
+					console.log = (...args) => {
+  				parent.window.postMessage({ type: 'log', args: args }, '*')
+  					originalLog(...args)
+					};
+				<\/script>
         <body>${$html}</body>
         <style>${$css}</style>
-        <script>${$js}<\/script>
+				<script>${$js}<\/script>			
       </html>`;
 		}, 320);
 	}
