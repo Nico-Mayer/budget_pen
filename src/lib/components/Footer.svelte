@@ -10,6 +10,6 @@
 		on:click={() => ($consoleOpen = !$consoleOpen)}
 	>
 		<div class="i-mdi-console-line mr-1" />
-		console</button
-	>
+		<span>console</span>
+	</button>
 </main>
