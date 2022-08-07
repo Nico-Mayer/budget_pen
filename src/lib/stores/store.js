@@ -11,7 +11,10 @@ const storedTailwindOption = localStorage.getItem(PREFIX + 'tailwind');
 export const html = writable(storedHTML || '');
 export const js = writable(storedJS || '');
 export const css = writable(storedCSS || '');
-export const tailwind = writable(storedTailwindOption === 'true' ? true : false || true);
+
+export const tailwind = writable(storedTailwindOption === 'true' ? true : false);
+
+console.log(tailwind);
 
 html.subscribe((value) => {
 	localStorage.setItem(PREFIX + 'html', value);
@@ -24,6 +27,7 @@ js.subscribe((value) => {
 css.subscribe((value) => {
 	localStorage.setItem(PREFIX + 'css', value);
 });
+
 tailwind.subscribe((value) => {
 	localStorage.setItem(PREFIX + 'tailwind', value.toString());
 });

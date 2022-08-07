@@ -108,8 +108,8 @@
 					fill-opacity=".3"
 					mask="url(#IconifyId18265db10ea134879296)"
 					><animate fill="freeze" attributeName="y" begin="1s" dur="0.4s" values="20;10" /></rect
-				></svg
-			>
+				>
+			</svg>
 		{/key}
 		<h1 class="font-heading text-xl">BudgetPen</h1>
 	</section>
