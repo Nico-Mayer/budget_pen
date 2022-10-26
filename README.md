@@ -1,5 +1,12 @@
-# <img src="https://api.iconify.design/line-md:buy-me-a-coffee-twotone.svg?color=%23adbac7" alt="logo" width="50"/> Budget Pen 
+# <img src="https://api.iconify.design/line-md:buy-me-a-coffee-twotone.svg?color=%23adbac7" alt="logo" width="50"/> Budget Pen
 
 Budget Pen is a Codepen Like Browser Code Editor Build with Svelte.
 
+Features:
+
+- Tailwind Included
+- Codemirror Editor
+
 [Live Demo](https://codepen-clone-mocha.vercel.app/)
+
+![](/public/screenshot.png)
